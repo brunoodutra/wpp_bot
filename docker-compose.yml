@@ -1,0 +1,17 @@
+services:
+
+    AI:
+        image: speech_pronunciation_AI
+        container_name: app_pronunciation
+        restart: always
+
+        ports:
+          - '3010:3010'
+
+    api:
+      build:
+        context: .
+        dockerfile: Dockerfile.api
+      container_name: app_pronunciation
+      ports:
+        - '5000:5000'
