@@ -8,6 +8,12 @@ services:
     ports:
       - '3000:3000'
 
+    env_file:
+      - .env
+
+    volumes:
+      - ./sessions:/app/.sessions
+
   api:
     build:
       context: .
@@ -15,6 +21,10 @@ services:
     container_name: wpp_bot_api
     ports:
       - '5000:5000'
+    env_file:
+      - .env
     volumes:
       - .:/app
       - ./chroma_data:/app/chroma_data
+
+    
