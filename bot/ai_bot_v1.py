@@ -19,9 +19,8 @@ os.environ['GROQ_API_KEY'] = config('GROQ_API_KEY')
 class AIBot:
 
     def __init__(self):
-        self.__LLM1 = ChatGroq(model='llama3-groq-70b-8192-tool-use-preview')
-        self.__LLM1 = ChatGroq(model='llama-3.3-70b-specdec')
-        self.__LLM2 = ChatGroq(model='gemma-7b-it')
+        self.__LLM1 = ChatGroq(model='llama-3.3-70b-versatile')
+        self.__LLM2 = ChatGroq(model='moonshotai/kimi-k2-instruct-0905')
         #self.__chat = Ollama(model="lllama3.2:latest",callback_manager=CallbackManager([StreamingStdOutCallbackHandler()]))
 
         #self.__retriever = self.__build_retriever()
